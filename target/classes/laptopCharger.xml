@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+    
+ <!--  No Autowiring   -->
+<!--   	
+    <bean id ="charger" class="com.model.Charger" >
+        <property name="model" value="Apple"></property>
+        <property name="year" value="2021"></property>
+        <property name="price" value="49"></property>
+    </bean>
+    
+     <bean id ="laptop" class="com.model.Laptop" autowire="no">
+        <property name="model" value="Apple"></property>
+        <property name="year" value="2021"></property>
+        <property name="price" value="999"></property>
+        <property name="charger" ref="charger"></property>
+    </bean>  -->
+    
+    
+    
+  
+    
+   <!--  By name Autowiring -> Maps via attribute-->
+   
+<!--     <bean id ="charger1" class="com.model.Charger" >
+        <property name="model" value="Apple"></property>
+        <property name="year" value="2021"></property>
+        <property name="price" value="49"></property>
+    </bean>
+    
+    <bean id ="charger2" class="com.model.Charger" >
+        <property name="model" value="HP"></property>
+        <property name="year" value="2022"></property>
+        <property name="price" value="39"></property>
+    </bean>
+    
+    <bean id ="charger" class="com.model.Charger" >
+        <property name="model" value="Samsung"></property>
+        <property name="year" value="2023"></property>
+        <property name="price" value="29"></property>
+    </bean>    
+    
+     <bean id ="laptop" class="com.model.Laptop" autowire="byName">
+        <property name="model" value="Apple"></property>
+        <property name="year" value="2021"></property>
+        <property name="price" value="999"></property>      
+    </bean> -->
+    
+    
+    
+    
+    
+     <!--  By type Autowiring -> Maps via class, Multiple beans of same type will cause errors -->
+<!--      
+     <bean id ="charger" class="com.model.Charger" >
+        <property name="model" value="Apple"></property>
+        <property name="year" value="2021"></property>
+        <property name="price" value="49"></property>
+    </bean>
+    
+    
+     <bean id ="laptop" class="com.model.Laptop" autowire="byType">
+        <property name="model" value="Apple"></property>
+        <property name="year" value="2021"></property>
+        <property name="price" value="999"></property>
+       
+    </bean> -->
+    
+    
+    
+    
+     <!--  By constructor Autowiring -> Maps via the constructor arguments   -->
+     <bean id ="charger" class="com.model.Charger" >
+        <constructor-arg value="Apple"></constructor-arg>
+        <constructor-arg value="2021"></constructor-arg>
+        <constructor-arg value="49"></constructor-arg>
+      
+    </bean>
+    
+    
+     <bean id ="laptop" class="com.model.Laptop" autowire="constructor">
+     
+    	<constructor-arg value="Apple"></constructor-arg>
+        <constructor-arg value="2021"></constructor-arg>
+        <constructor-arg value="999"></constructor-arg>
+        <constructor-arg ref="charger"></constructor-arg>
+           
+    </bean>
+    
+    
+</beans>
+
